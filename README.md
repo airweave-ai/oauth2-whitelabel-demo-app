@@ -1,8 +1,10 @@
 # Airweave Demo App
 
-A simple HTML/CSS/JavaScript demo showing how to integrate Slack using Airweave's white label OAuth2 flow.
+A simple HTML/CSS/JS demo showing how to integrate Slack using Airweave's white label OAuth2 flow.
 
 ## Setup
+
+### If the Airweave server is not already running:
 
 1. Clone the Airweave repository:
 ```bash
@@ -16,20 +18,22 @@ chmod +x start.sh
 ./start.sh
 ```
 
-3. Create the white label integration. This will create a white label integration for Slack and put the white label id in the `public/app.js` file. Normally you would do this in the Airweave UI.
+### Main Setup Steps:
+
+1. Create the white label integration. This will create a white label integration for Slack and put the white label id in the `public/app.js` file. Typically you would do this in the Airweave UI.
 ```bash
 cd ..
 chmod +x bin/create-white-label.sh
 ./bin/create-white-label.sh
 ```
 
-4. Serve the demo app (using any static file server, e.g., Python's built-in server):
+2. Serve the demo app (using any static file server, e.g., Python's built-in server):
 ```bash
 cd public
 python3 -m http.server 3000
 ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser
+3. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ## Files
 
