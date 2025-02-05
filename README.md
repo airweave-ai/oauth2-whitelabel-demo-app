@@ -22,7 +22,6 @@ chmod +x start.sh
 
 1. Create the white label integration. This will create a white label integration for Slack and put the white label id in the `public/app.js` file. Typically you would do this in the Airweave UI.
 ```bash
-cd ..
 chmod +x bin/create-white-label.sh
 ./bin/create-white-label.sh
 ```

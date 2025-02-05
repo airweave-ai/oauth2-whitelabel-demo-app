@@ -1,20 +1,14 @@
 // White label ID from the creation script
-const WHITE_LABEL_ID = 'slack-white-label-id';
+const WHITE_LABEL_ID = "{{WHITE_LABEL_ID_PLACEHOLDER}}";
 
 document.addEventListener('DOMContentLoaded', () => {
     const connectButton = document.getElementById('connectButton');
     
     connectButton.addEventListener('click', async () => {
         try {
-            const response = await fetch('http://localhost:8001/whiteLabels/getOauth2AuthUrl', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    whiteLabelId: WHITE_LABEL_ID,
-                    state: 'organization-123' // Demo organization ID
-                })
+            // Get the OAuth URL for the white label
+            const response = await fetch(`http://localhost:8001/connections/oauth2/white-label/${WHITE_LABEL_ID}/auth_url`, {
+                method: 'GET',
             });
 
             if (!response.ok) {
@@ -22,10 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const data = await response.json();
-            window.location.href = data.authUrl;
+            console.log(data);
+            
+            window.location.href = data.auth_url;
         } catch (error) {
             console.error('Failed to initiate OAuth flow:', error);
-            alert('Failed to connect to Slack. Please try again.');
+            alert('Failed to connect to Notion. Please try again.');
         }
     });
 }); 
