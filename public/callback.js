@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-        const response = await fetch('http://localhost:8001/whiteLabels/exchangeOauth2Code', {
+        const response = await fetch(`http://localhost:8001/white_labels/${WHITE_LABEL_ID}/oauth2/code`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -26,7 +26,9 @@ document.addEventListener('DOMContentLoaded', async () => {
                 whiteLabelId: WHITE_LABEL_ID,
                 code,
                 metadata: {
-                    organizationId: state
+                    organizationId: "your-users-organization-id",
+                    userId: "your-users-user-id",
+                    email: "your-users-email"
                 }
             })
         });

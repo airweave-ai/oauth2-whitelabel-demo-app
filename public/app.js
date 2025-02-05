@@ -16,9 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const data = await response.json();
-            console.log(data);
-            
-            window.location.href = data.auth_url;
+            window.location.href = data;
         } catch (error) {
             console.error('Failed to initiate OAuth flow:', error);
             alert('Failed to connect to Notion. Please try again.');

@@ -24,8 +24,8 @@ white_label_id=$(curl -X POST -H "Content-Type: application/json" \
   "name": "Notion White Label Demo",
   "source_short_name": "notion",
   "redirect_url": "http://localhost:3000/callback.html",
-  "client_id": "6769618979345.8289604264455",
-  "client_secret": "e27c2e6b34a46987ee1707bd0d9aba15"
+  "client_id": "16dd872b-594c-8007-a0ee-00376e9a88a9",
+  "client_secret": "secret_O3WlZnEMgG8zRX4taqkzoJT5VcDPIos3NVpOdo3YYUl"
 }' 'http://localhost:8001/white_labels/' | jq -r '.id')
 
 echo ""
