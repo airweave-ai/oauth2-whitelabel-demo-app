@@ -38,10 +38,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         statusElement.textContent = 'Success!';
-        messageElement.textContent = 'Your Notion workspace has been connected. Data sync will begin shortly.';
+        messageElement.textContent = 'Your Asana workspace has been connected. Data sync will begin shortly.';
     } catch (error) {
         console.error('Failed to complete OAuth flow:', error);
         statusElement.textContent = 'Error';
-        messageElement.textContent = 'Failed to connect your Notion workspace. Please try again.';
+        messageElement.textContent = 'Failed to connect your Asana workspace. Please try again.';
     }
 }); 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Creating white label integration for Notion... (typically you would do this in the Airweave UI)"
+echo "Creating white label integration for Asana... (typically you would do this in the Airweave UI)"
 
 # Check if jq is installed
 if ! command -v jq &> /dev/null; then
@@ -21,8 +21,8 @@ fi
 white_label_id=$(curl -X POST -H "Content-Type: application/json" \
   --location \
   -d '{
-  "name": "Notion White Label Demo",
-  "source_short_name": "notion",
+  "name": "TaskBot - Asana White Label Demo",
+  "source_short_name": "asana",
   "redirect_url": "http://localhost:3000/callback.html",
   "client_id": "16dd872b-594c-8007-a0ee-00376e9a88a9",
   "client_secret": "secret_O3WlZnEMgG8zRX4taqkzoJT5VcDPIos3NVpOdo3YYUl"
@@ -46,6 +46,6 @@ echo "Done!"
 echo "You can now run the demo app by running:"
 echo "cd public && python3 -m http.server 3000"
 echo "Then open http://localhost:3000 in your browser."
-echo "You can now connect your Slack workspace to the demo app."
+echo "You can now connect your Asana workspace to the demo app."
 echo ""
 echo "If you have any questions, please reach out to us at support@airweave.ai"
