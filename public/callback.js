@@ -10,27 +10,21 @@ document.addEventListener('DOMContentLoaded', async () => {
     const code = urlParams.get('code');
     const state = urlParams.get('state');
 
-    if (!code || !state) {
+    if (!code) {
         statusElement.textContent = 'Error';
         messageElement.textContent = 'Missing required parameters';
         return;
     }
 
     try {
-        const response = await fetch(`http://localhost:8001/white_labels/${WHITE_LABEL_ID}/oauth2/code`, {
+        const response = await fetch(`http://localhost:8001/connections/oauth2/white-label/${WHITE_LABEL_ID}/code`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
             },
-            body: JSON.stringify({
-                whiteLabelId: WHITE_LABEL_ID,
-                code,
-                metadata: {
-                    organizationId: "your-users-organization-id",
-                    userId: "your-users-user-id",
-                    email: "your-users-email"
-                }
-            })
+            mode: 'cors',
+            body: JSON.stringify(code) 
         });
 
         if (!response.ok) {

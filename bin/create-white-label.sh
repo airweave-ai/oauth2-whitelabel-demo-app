@@ -24,8 +24,8 @@ white_label_id=$(curl -X POST -H "Content-Type: application/json" \
   "name": "TaskBot - Asana White Label Demo",
   "source_short_name": "asana",
   "redirect_url": "http://localhost:3000/callback.html",
-  "client_id": "16dd872b-594c-8007-a0ee-00376e9a88a9",
-  "client_secret": "secret_O3WlZnEMgG8zRX4taqkzoJT5VcDPIos3NVpOdo3YYUl"
+  "client_id": "1209332365634185",
+  "client_secret": "2670cb38cc5e52b081ea721486da0195"
 }' 'http://localhost:8001/white_labels/' | jq -r '.id')
 
 echo ""

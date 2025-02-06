@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = data;
         } catch (error) {
             console.error('Failed to initiate OAuth flow:', error);
-            alert('Failed to connect to Notion. Please try again.');
+            alert('Failed to connect to Airweave. Please try again.');
         }
     });
 }); 
